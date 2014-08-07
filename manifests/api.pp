@@ -31,26 +31,26 @@ define uchiwa::api(
   validate_re($path, '^[a-zA-Z0-9_/]*$')
   validate_re($timeout, '^[0-9]*$')
 
-  concat::fragment { "50-uchiwa-api-${name}":
-    target  => '/etc/sensu/uchiwa.json',
-    order   => '50',
-    content => template('uchiwa/etc/sensu/uchiwa_api.json.erb'),
+  datacat_fragment { "uchiwa-api-${name}":
+    target => '/etc/sensu/uchiwa.json',
+    data   => {
+      api => ["    {
+      \"name\": \"${title}\",
+      \"host\": \"${host}\",
+      \"port\": ${port},
+      \"ssl\": ${ssl},
+      \"user\": \"${user}\",
+      \"pass\": \"${pass}\",
+      \"path\": \"${path}\",
+      \"timeout\": ${timeout}
+    }"],
+    host    => $uchiwa::host,
+    port    => $uchiwa::port,
+    user    => $uchiwa::user,
+    pass    => $uchiwa::pass,
+    stats   => $uchiwa::stats,
+    refresh => $uchiwa::refresh
+    },
   }
-
-#  datacat_fragment { "uchiwa-api-${name}":
-#    target => '/etc/sensu/uchiwa.json',
-#    data   => {
-#      bunny => '{
-#      "name": "$title",
-#      "host": "$host",
-#      "port": $port,
-#      "ssl": $ssl,
-#      "user": "$user",
-#      "pass": "$pass",
-#      "path": "$path",
-#      "timeout": $timeout
-#    }'
-#    },
-#  }
 
 }
