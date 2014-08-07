@@ -6,6 +6,7 @@ rvm:
   - 2.0.0
   - 2.1.0
 before_install:
+  - rm Gemfile.lock || true
   - gem update --system 2.1.11
   - gem --version
 script:
@@ -14,7 +15,6 @@ script:
   - "rake spec SPEC_OPTS='--format documentation'"
 env:
   - PUPPET_VERSION="~> 2.7.0"
-  - PUPPET_VERSION="~> 3.1.0"
   - PUPPET_VERSION="~> 3.2.0"
   - PUPPET_VERSION="~> 3.3.0"
   - PUPPET_VERSION="~> 3.4.0"
@@ -32,8 +32,6 @@ matrix:
       env: PUPPET_VERSION="~> 2.7.0"
     - rvm: 2.1.0
       env: PUPPET_VERSION="~> 3.0.0"
-    - rvm: 2.1.0
-      env: PUPPET_VERSION="~> 3.1.0"
     - rvm: 2.1.0
       env: PUPPET_VERSION="~> 3.2.0"
     - rvm: 2.1.0
