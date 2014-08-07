@@ -35,14 +35,14 @@ See `Modulefile` for details.
 
 API definitions will default to the following values:
 
-  name    => Definition Name
-  host    => ''
-  ssl     => false
-  port    => 4567
-  user    => 'sensu'
-  pass    => 'sensu'
-  path    => ''
-  timeout => 5000
+    name    => Definition Name
+    host    => ''
+    ssl     => false
+    port    => 4567
+    user    => 'sensu'
+    pass    => 'sensu'
+    path    => ''
+    timeout => 5000
 
     node 'uchiwa-server.foo.com' {
       class { 'uchiwa': }
