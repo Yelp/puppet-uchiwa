@@ -1,0 +1,11 @@
+    }
+  ],
+  "uchiwa": {
+    "host": "<%= scope.lookupvar('uchiwa::host') %>",
+    "port": <%= scope.lookupvar('uchiwa::port') %>,
+    "user": "<%= scope.lookupvar('uchiwa::user') %>",
+    "pass": "<%= scope.lookupvar('uchiwa::pass') %>",
+    "stats": <%= scope.lookupvar('uchiwa::stats') %>,
+    "refresh": <%= scope.lookupvar('uchiwa::refresh') %>
+  }
+}
