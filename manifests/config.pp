@@ -9,13 +9,13 @@ class uchiwa::config {
     group   => 'root',
     mode    => '0655',
   }
- 
+
   concat::fragment { '01-uchiwa-header':
     target  => '/etc/sensu/uchiwa.json',
     order   => '01',
     content => template('uchiwa/etc/sensu/uchiwa_header.json.erb'),
   }
- 
+
   concat::fragment { '99-uchiwa-footer':
     target  => '/etc/sensu/uchiwa.json',
     order   => '99',

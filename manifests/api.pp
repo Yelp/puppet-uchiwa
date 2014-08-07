@@ -1,3 +1,18 @@
+# uchiwa::api
+# Used for defining APIS
+# uchiwa::api { ' API 1':
+#  host    => '10.56.5.8',
+# }
+#
+# uchiwa::api { 'API 2':
+#  host    => '10.16.1.25',
+#  ssl     => true,
+#  port    => 7654,
+#  user    => 'sensu',
+#  pass    => 'saBEnX8PQoyz2LG',
+#  path    => '/sensu',
+#  timeout => 5000
+#}
 define uchiwa::api(
   $host,
   $ssl     = false,
