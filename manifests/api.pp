@@ -32,9 +32,9 @@ define uchiwa::api(
   validate_re($timeout, '^[0-9]*$')
 
   datacat_fragment { "uchiwa-api-${name}":
-    target => '/etc/sensu/uchiwa.json',
-    data   => {
-      api => ["    {
+    target  => '/etc/sensu/uchiwa.json',
+    data    => {
+      api   => ["    {
       \"name\": \"${title}\",
       \"host\": \"${host}\",
       \"port\": ${port},
