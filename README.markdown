@@ -44,6 +44,8 @@ API definitions will default to the following values:
     path    => ''
     timeout => 5000
 
+This is an example of a 2 API setup:
+
     node 'uchiwa-server.foo.com' {
       class { 'uchiwa': }
 
