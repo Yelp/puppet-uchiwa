@@ -29,6 +29,7 @@ class uchiwa::params {
 
   $sensu_api_endpoints  = [{
                             name     =>  'sensu',
+                            host     => '127.0.0.1',
                             ssl      =>  false,
                             insecure =>  false,
                             port     =>  4567,
