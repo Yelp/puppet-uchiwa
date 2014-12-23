@@ -2,7 +2,7 @@
 #
 # This class is called from uchiwa
 #
-class uchiwa::config {
+class uchiwa::config inherits uchiwa {
 
   file { '/etc/sensu/uchiwa.json':
     ensure  => file,
