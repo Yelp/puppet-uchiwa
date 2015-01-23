@@ -63,6 +63,12 @@ describe 'sensu class', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfamily
         end
       end
 
+      describe file('/etc/sensu/uchiwa.json') do
+        it { should be_owned_by 'uchiwa' }
+        it { should be_grouped_into 'uchiwa' }
+        it { should be_mode 440 }
+      end
+
       it 'rerun puppet with default params' do
         
         pp = <<-EOS

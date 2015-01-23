@@ -14,6 +14,9 @@ describe 'uchiwa' do
   context 'config file' do
     it { should contain_file('/etc/sensu/uchiwa.json').with_ensure('file') }
     it { should contain_file('/etc/sensu/uchiwa.json').with_content(/"host": "127.0.0.1"/) }
+    it { should contain_file('/etc/sensu/uchiwa.json').with_owner('uchiwa') }
+    it { should contain_file('/etc/sensu/uchiwa.json').with_group('uchiwa') }
+    it { should contain_file('/etc/sensu/uchiwa.json').with_mode('0440') }
   end
 
   context 'package' do
