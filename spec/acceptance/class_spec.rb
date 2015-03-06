@@ -56,7 +56,7 @@ describe 'sensu class', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfamily
       end
       it 'should produce consistent uchiwa.json file' do
 
-        uchiwa_json = "{\n\"sensu\": [\n    {\n      \"name\": \"Main Server\",\n      \"host\": \"127.0.0.1\",\n      \"ssl\": false,\n      \"insecure\": false,\n      \"port\": 4567,\n      \"user\": \"sensu\",\n      \"pass\": \"secret\",\n      \"path\": \"\",\n      \"timeout\": 5000\n    }\n  ],\n  \"uchiwa\": {\n    \"host\": \"0.0.0.0\",\n    \"port\": 3000,\n    \"user\": \"\",\n    \"pass\": \"\",\n    \"stats\": 10,\n    \"refresh\": 10000\n  }\n}\n"
+        uchiwa_json = "{\n\"sensu\": [\n    {\n      \"name\": \"Main Server\",\n      \"host\": \"127.0.0.1\",\n      \"ssl\": false,\n      \"insecure\": false,\n      \"port\": 4567,\n      \"user\": \"sensu\",\n      \"pass\": \"secret\",\n      \"path\": \"\",\n      \"timeout\": 5000\n    }\n  ],\n  \"uchiwa\": {\n    \"host\": \"0.0.0.0\",\n    \"port\": 3000,\n    \"user\": \"\",\n    \"pass\": \"\",\n    \"refresh\": 5\n  }\n}\n"
 
         shell('cat /etc/sensu/uchiwa.json') do |cat|
           expect(cat.stdout).to eq (uchiwa_json)
@@ -81,7 +81,7 @@ describe 'sensu class', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfamily
 
       it 'should produce a uchiwa.json file from defaults' do
 
-        uchiwa_json = "{\n\"sensu\": [\n    {\n      \"name\": \"sensu\",\n      \"host\": \"127.0.0.1\",\n      \"ssl\": false,\n      \"insecure\": false,\n      \"port\": 4567,\n      \"user\": \"sensu\",\n      \"pass\": \"sensu\",\n      \"path\": \"\",\n      \"timeout\": 5000\n    }\n  ],\n  \"uchiwa\": {\n    \"host\": \"0.0.0.0\",\n    \"port\": 3000,\n    \"user\": \"\",\n    \"pass\": \"\",\n    \"stats\": 10,\n    \"refresh\": 10000\n  }\n}\n"
+        uchiwa_json = "{\n\"sensu\": [\n    {\n      \"name\": \"sensu\",\n      \"host\": \"127.0.0.1\",\n      \"ssl\": false,\n      \"insecure\": false,\n      \"port\": 4567,\n      \"user\": \"sensu\",\n      \"pass\": \"sensu\",\n      \"path\": \"\",\n      \"timeout\": 5000\n    }\n  ],\n  \"uchiwa\": {\n    \"host\": \"0.0.0.0\",\n    \"port\": 3000,\n    \"user\": \"\",\n    \"pass\": \"\",\n    \"refresh\": 5\n  }\n}\n"
 
         shell('cat /etc/sensu/uchiwa.json') do |cat|
           expect(cat.stdout).to eq (uchiwa_json)
