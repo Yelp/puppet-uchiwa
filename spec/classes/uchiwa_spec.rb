@@ -33,7 +33,7 @@ describe 'uchiwa' do
 
       it { should contain_package('uchiwa').with(
         :ensure => '0.1.5'
-      ) }
+      ).that_notifies('Service[uchiwa]') }
     end
 
     context 'repos' do
