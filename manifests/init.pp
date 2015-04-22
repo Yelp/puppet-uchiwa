@@ -126,10 +126,10 @@ class uchiwa (
   validate_string($repo_key_id)
   validate_string($repo_key_source)
   validate_string($host)
-  validate_string($port)
+  validate_integer($port)
   validate_string($user)
   validate_string($pass)
-  validate_string($refresh)
+  validate_integer($refresh)
   validate_array($sensu_api_endpoints)
 
   anchor { 'uchiwa::begin': } ->
