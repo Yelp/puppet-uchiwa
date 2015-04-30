@@ -65,7 +65,7 @@
   "issues_url": "https://github.com/yelp/puppet-uchiwa/issues",
   "description": "Puppet module for installing Uchiwa",
   "dependencies": [
-    {"name":"puppetlabs/apt"},
+    {"name":"puppetlabs/apt","version_requirement": ">=1.4.0 <2.0.0"},
     {"name":"puppetlabs/stdlib"}
   ]
 }
