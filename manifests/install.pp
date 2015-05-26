@@ -33,8 +33,8 @@ class uchiwa::install {
     }
 
     group { 'uchiwa':
-      ensure  => 'present',
-      system  => true,
+      ensure => 'present',
+      system => true,
     }
   }
 
