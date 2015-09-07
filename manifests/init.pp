@@ -63,7 +63,7 @@
 #    What IP should we bind to?
 #
 #  [*port*]
-#    String
+#    Integer
 #    Default: 3000
 #    What port should we run on?
 #
