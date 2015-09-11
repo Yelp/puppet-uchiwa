@@ -54,7 +54,7 @@ can ask the Uchiwa module not to manage the repo:
 
 ```puppet
 class { '::uchiwa':
-  manage_repo => false,
+  install_repo => false,
 }
 ```
 
