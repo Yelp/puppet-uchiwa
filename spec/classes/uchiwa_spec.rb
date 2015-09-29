@@ -144,4 +144,13 @@ describe 'uchiwa' do
 
   end
 
+  context 'with sensu_api_endpoints' do
+    let(:params) {{ :sensu_api_endpoints => [ { 'name' => 'foo', 'host' => 'bar' } ] }}
+    it {
+      should contain_file('/etc/sensu/uchiwa.json') \
+        .with_content(/"name": "foo"/) \
+        .with_content(/"host": "bar"/)
+    }
+  end
+
 end
