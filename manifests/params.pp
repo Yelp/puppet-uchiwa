@@ -22,27 +22,16 @@ class uchiwa::params {
   $install_repo    = true
   $repo            = 'main'
   $repo_source     = undef
-  $repo_key_id     = '8911D8FF37778F24B4E726A218609E3D7580C77F'
+  $repo_key_id     = '7580C77F'
   $repo_key_source = 'http://repos.sensuapp.org/apt/pubkey.gpg'
   $manage_services = true
   $manage_user     = true
 
-  $sensu_api_endpoints  = [
-    {
-      name     =>  'sensu',
-      host     => '127.0.0.1',
-      ssl      =>  false,
-      insecure =>  false,
-      port     =>  4567,
-      user     =>  'sensu',
-      pass     =>  'sensu',
-      path     =>  '',
-      timeout  =>  5,
-    }
-  ]
   $host            =     '0.0.0.0'
-  $port            =     3000
+  $port            =     '3000'
   $user            =     ''
   $pass            =     ''
-  $refresh         =     '5'
+  $stats           =     '10'
+  $refresh         =     '10000'
+
 }
