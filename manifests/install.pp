@@ -38,10 +38,12 @@ class uchiwa::install {
     }
   }
 
-  package { $uchiwa::package_name:
-    ensure  => $uchiwa::version,
-    require => $repo_require,
-    notify  => Service['uchiwa'],
+  if ($uchiwa::install_package) {
+    package { $uchiwa::package_name:
+      ensure  => $uchiwa::version,
+      require => $repo_require,
+      notify  => Service['uchiwa'],
+    }
   }
 
 }
