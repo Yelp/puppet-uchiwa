@@ -53,11 +53,11 @@ describe 'uchiwa' do
           context 'default' do
             it { should contain_apt__source('sensu').with(
               :ensure   => 'present',
-              :location => 'http://repos.sensuapp.org/apt',
+              :location => 'http://repositories.sensuapp.org/apt',
               :release  => 'sensu',
               :repos    => 'main',
               :include  => { 'src' => false, 'deb' => true },
-              :key      => { 'id' => '8911D8FF37778F24B4E726A218609E3D7580C77F', 'source' => 'http://repos.sensuapp.org/apt/pubkey.gpg' },
+              :key      => { 'id' => '8911D8FF37778F24B4E726A218609E3D7580C77F', 'source' => 'http://repositories.sensuapp.org/apt/pubkey.gpg' },
               :before   => 'Package[uchiwa]'
             ) }
           end
@@ -93,7 +93,7 @@ describe 'uchiwa' do
 
             it { should_not contain_apt__key('sensu').with(
               :key         => '7580C77F',
-              :key_source  => 'http://repos.sensuapp.org/apt/pubkey.gpg'
+              :key_source  => 'http://repositories.sensuapp.org/apt/pubkey.gpg'
             ) }
 
             it { should contain_package('uchiwa').with(
