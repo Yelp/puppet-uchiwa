@@ -47,7 +47,7 @@
 #    Default: http://repos.sensuapp.org/apt/pubkey.gpg
 #    GPG key for the repo we're installing
 #
-#  [*install_package*]
+#  [*manage_package*]
 #    Boolean
 #    Default: true
 #    Should we install the package from the repo?
@@ -109,7 +109,7 @@ class uchiwa (
   $repo_source          = $uchiwa::params::repo_source,
   $repo_key_id          = $uchiwa::params::repo_key_id,
   $repo_key_source      = $uchiwa::params::repo_key_source,
-  $install_package      = $uchiwa::params::install_package,
+  $manage_package       = $uchiwa::params::manage_package,
   $manage_services      = $uchiwa::params::manage_services,
   $manage_user          = $uchiwa::params::manage_user,
   $host                 = $uchiwa::params::host,
@@ -122,7 +122,7 @@ class uchiwa (
 
   # validate parameters here
   validate_bool($install_repo)
-  validate_bool($install_package)
+  validate_bool($manage_package)
   validate_bool($manage_services)
   validate_bool($manage_user)
   validate_string($package_name)

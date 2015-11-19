@@ -38,7 +38,7 @@ class uchiwa::install {
     }
   }
 
-  if ($uchiwa::install_package) {
+  if ($uchiwa::manage_package) {
     package { $uchiwa::package_name:
       ensure  => $uchiwa::version,
       require => $repo_require,
