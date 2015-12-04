@@ -99,11 +99,19 @@
 #    Array of hashes
 #    An array of user credentials to access the uchiwa dashboard. If set, it takes
 #    precendence over 'user' and 'pass'.
-#    Example: [{
-#                username  => 'user1',
-#                password  => 'pass1',
-#                readonly  => false
-#             }]
+#    Example: 
+#    ```   
+#    [{
+#       'username' => 'user1',
+#       'password' => 'pass1',
+#       'readonly' => false
+#     },
+#     {
+#       'username' => 'user2',
+#       'password' => 'pass2',
+#       'readonly' => true
+#     }]
+#     ```
 #
 class uchiwa (
   $package_name         = $uchiwa::params::package_name,
