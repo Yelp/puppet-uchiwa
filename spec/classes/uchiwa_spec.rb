@@ -152,4 +152,12 @@ describe 'uchiwa' do
     }
   end
 
+  context 'with multiple users' do
+    let(:params) {{ :users => [ { 'username' => 'user1', 'password' => 'pass1', 'readonly' => true } ] }}
+    it {
+      should contain_file('/etc/sensu/uchiwa.json') \
+        .with_content(/"username": "user1",\n        "password": "pass1",\n        "role": {\n          "readonly": true\n        }\n      }/)
+    }
+  end
+
 end

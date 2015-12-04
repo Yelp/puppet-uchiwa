@@ -45,4 +45,5 @@ class uchiwa::params {
   $user            =     ''
   $pass            =     ''
   $refresh         =     '5'
+  $users           =     []
 }

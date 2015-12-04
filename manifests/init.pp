@@ -95,6 +95,24 @@
 #             }]
 #     An array of API endpoints to connect uchiwa to one or multiple sensu servers.
 #
+#  [*users*]
+#    Array of hashes
+#    An array of user credentials to access the uchiwa dashboard. If set, it takes
+#    precendence over 'user' and 'pass'.
+#    Example: 
+#    ```   
+#    [{
+#       'username' => 'user1',
+#       'password' => 'pass1',
+#       'readonly' => false
+#     },
+#     {
+#       'username' => 'user2',
+#       'password' => 'pass2',
+#       'readonly' => true
+#     }]
+#     ```
+#
 class uchiwa (
   $package_name         = $uchiwa::params::package_name,
   $service_name         = $uchiwa::params::service_name,
@@ -112,6 +130,7 @@ class uchiwa (
   $pass                 = $uchiwa::params::pass,
   $refresh              = $uchiwa::params::refresh,
   $sensu_api_endpoints  = $uchiwa::params::sensu_api_endpoints,
+  $users                = $uchiwa::params::users
 ) inherits uchiwa::params {
 
   # validate parameters here
@@ -131,6 +150,7 @@ class uchiwa (
   validate_string($pass)
   validate_integer($refresh)
   validate_array($sensu_api_endpoints)
+  validate_array($users)
 
   anchor { 'uchiwa::begin': } ->
   class { 'uchiwa::install': } ->
