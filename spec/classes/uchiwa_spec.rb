@@ -160,4 +160,12 @@ describe 'uchiwa' do
     }
   end
 
+  context 'with static JWT RSA keys' do
+    let(:params) {{ :auth => { 'publickey' => '/etc/sensu/uchiwa.rsa.pub', 'privatekey' => '/etc/sensu/uchiwa.rsa' } }}
+    it {
+      should contain_file('/etc/sensu/uchiwa.json') \
+      .with_content(/"auth": {\n      "publickey": "\/etc\/sensu\/uchiwa.rsa.pub",\n      "privatekey": "\/etc\/sensu\/uchiwa.rsa"\n    }/)
+    }
+  end
+
 end
