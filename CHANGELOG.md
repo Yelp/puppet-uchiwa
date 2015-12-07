@@ -1,5 +1,16 @@
 # Change Log
 
+## [v1.0.1](https://github.com/Yelp/puppet-uchiwa/tree/v1.0.1) (2015-12-07)
+[Full Changelog](https://github.com/Yelp/puppet-uchiwa/compare/v1.0.0...v1.0.1)
+
+**Closed issues:**
+
+- Changelog [\#30](https://github.com/Yelp/puppet-uchiwa/issues/30)
+
+**Merged pull requests:**
+
+- Update apt key id [\#62](https://github.com/Yelp/puppet-uchiwa/pull/62) ([queeno](https://github.com/queeno))
+
 ## [v1.0.0](https://github.com/Yelp/puppet-uchiwa/tree/v1.0.0) (2015-12-04)
 [Full Changelog](https://github.com/Yelp/puppet-uchiwa/compare/0.3.0...v1.0.0)
 
