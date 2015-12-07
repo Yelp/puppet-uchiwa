@@ -57,7 +57,7 @@ describe 'uchiwa' do
               :release  => 'sensu',
               :repos    => 'main',
               :include  => { 'src' => false, 'deb' => true },
-              :key      => { 'id' => '8911D8FF37778F24B4E726A218609E3D7580C77F', 'source' => 'http://repositories.sensuapp.org/apt/pubkey.gpg' },
+              :key      => { 'id' => 'EE15CFF6AB6E4E290FDAB681A20F259AEB9C94BB', 'source' => 'http://repositories.sensuapp.org/apt/pubkey.gpg' },
               :before   => 'Package[uchiwa]'
             ) }
           end
