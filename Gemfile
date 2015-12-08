@@ -2,16 +2,22 @@ source 'https://rubygems.org'
 
 source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
-gem 'rake',                    :require => false
-gem 'rspec-puppet',            :require => false
-gem 'puppetlabs_spec_helper',  :require => false
-gem 'serverspec',              :require => false
-gem 'puppet-lint',             :require => false
-gem 'beaker',                  :require => false
-gem 'beaker-rspec', "~> 2.2.4",:require => false
-gem 'pry',                     :require => false
-gem 'simplecov',               :require => false
-gem 'vagrant-wrapper',         :require => false
+group :development, :test do
+  gem 'rake',                    :require => false
+  gem 'rspec-puppet',            :require => false
+  gem 'puppetlabs_spec_helper',  :require => false
+  gem 'serverspec',              :require => false
+  gem 'puppet-lint',             :require => false
+  gem 'beaker',                  :require => false
+  gem 'beaker-rspec', "~> 2.2.4",:require => false
+  gem 'pry',                     :require => false
+  gem 'simplecov',               :require => false
+  gem 'vagrant-wrapper',         :require => false
+  gem "travis"
+  gem "travis-lint"
+  gem "puppet-blacksmith"
+  gem "guard-rake"
+end
 
 if facterversion = ENV['FACTER_GEM_VERSION']
   gem 'facter', facterversion, :require => false
@@ -25,10 +31,4 @@ else
   gem 'puppet', :require => false
 end
 
-group :development do
-  gem "travis"
-  gem "travis-lint"
-  gem "puppet-blacksmith"
-  gem "guard-rake"
-end
 # vim:ft=ruby
