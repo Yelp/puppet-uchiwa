@@ -176,7 +176,7 @@ class uchiwa (
   validate_array($sensu_api_endpoints)
   validate_array($users)
   validate_hash($auth)
-  validate_re($loglevel, 'trace|debug|info|warn|fatal')
+  validate_re($log_level, 'trace|debug|info|warn|fatal')
 
   anchor { 'uchiwa::begin': } ->
   class { 'uchiwa::install': } ->
