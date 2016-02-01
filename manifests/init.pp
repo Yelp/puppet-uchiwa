@@ -181,7 +181,7 @@ class uchiwa (
   validate_hash($auth)
   validate_hash($ssl)
   validate_hash($usersoptions)
-  validate_re($loglevel, 'trace|debug|info|warn|fatal')
+  validate_re($log_level, 'trace|debug|info|warn|fatal')
 
   anchor { 'uchiwa::begin': }
   -> class { 'uchiwa::install': }
