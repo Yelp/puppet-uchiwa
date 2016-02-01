@@ -179,7 +179,7 @@ describe 'uchiwa' do
   end
 
   context 'with debug log level' do
-    let(:params) {{ :loglevel => 'debug' }}
+    let(:params) {{ :log_level => 'debug' }}
     it {
       should contain_file('/etc/sensu/uchiwa.json') \
         .with_content(/"loglevel": "debug"/)

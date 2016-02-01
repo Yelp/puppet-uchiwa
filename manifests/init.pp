@@ -153,7 +153,7 @@ class uchiwa (
   $sensu_api_endpoints  = $uchiwa::params::sensu_api_endpoints,
   $users                = $uchiwa::params::users,
   $auth                 = $uchiwa::params::auth,
-  $loglevel             = $uchiwa::params::loglevel
+  $log_level            = $uchiwa::params::log_level
 ) inherits uchiwa::params {
 
   # validate parameters here
