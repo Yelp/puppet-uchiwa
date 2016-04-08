@@ -22,7 +22,7 @@ class uchiwa::repo::apt {
         $url = 'http://repositories.sensuapp.org/apt'
       }
 
-      apt::source { 'sensu':
+      apt::source { 'uchiwa':
         ensure   => $ensure,
         before   => Package['uchiwa'],
         include  => {
