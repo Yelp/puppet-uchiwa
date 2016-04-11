@@ -18,11 +18,11 @@ class uchiwa::repo::yum {
       }
     }
 
-    yumrepo { 'sensu':
+    yumrepo { 'uchiwa':
       enabled  => 1,
       baseurl  => $url,
       gpgcheck => 0,
-      name     => 'sensu',
+      name     => 'uchiwa',
       descr    => 'sensuapp.org uchiwa repo',
       before   => Package['uchiwa'],
     }
