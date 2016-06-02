@@ -41,7 +41,7 @@
         }
       }<%= ',' if i < (@users.size - 1) %>
     <%- end -%>
-    ]<%= ',' if @auth.size == 2 %>
+    ]<%= ',' if @users.size %>
   <%- end -%>
   <%- if @auth.size == 2 -%>
     "auth": {
