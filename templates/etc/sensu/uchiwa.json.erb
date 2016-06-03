@@ -19,8 +19,8 @@
         "pass": "<%= endpoint['pass'] || default_endpoint['pass'] %>",
         "path": "<%= endpoint['path'] || default_endpoint['path'] %>",
         "timeout": <%= endpoint['timeout'] || default_endpoint['timeout'] %>
-      }<%= ',' if j < (endpoint['host'].size - 1) %>
-    <%- end %>
+      }<%= ',' if j < (endpoint['host'].size - 1) -%>
+    <%- end -%>
     <%= ',' if i < (@sensu_api_endpoints.size - 1) %>
   <%- end -%>
   ],
