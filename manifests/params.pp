@@ -49,4 +49,5 @@ class uchiwa::params {
   $users           =     []
   $auth            =     {}
   $ssl             =     {}
+  $usersoptions    =     {}
 }
