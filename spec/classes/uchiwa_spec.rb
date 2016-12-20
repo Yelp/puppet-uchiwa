@@ -178,4 +178,13 @@ describe 'uchiwa' do
     }
   end
 
+  context 'with usersoptions' do
+    let(:params) {{ :usersoptions => { 'disableNoExpiration' => true, 'defaultTheme' => 'uchiwa-default' } }}
+    it {
+      should contain_file('/etc/sensu/uchiwa.json') \
+        .with_content(/"disableNoExpiration": true/) \
+        .with_content(/"defaultTheme": "uchiwa-default"/)
+    }
+  end
+
 end
