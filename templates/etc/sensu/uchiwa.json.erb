@@ -21,7 +21,7 @@
         "timeout": <%= endpoint['timeout'] || default_endpoint['timeout'] %>
       }<%= ',' if j < (endpoint['host'].size - 1) -%>
     <%- end -%>
-    <%= ',' if i < (@sensu_api_endpoints.size - 1) %>
+<%= ',' if i < (@sensu_api_endpoints.size - 1) %>
   <%- end -%>
   ],
   "uchiwa": {
@@ -29,7 +29,7 @@
     "port": <%= @port %>,
     "user": "<%= @user %>",
     "pass": "<%= @pass %>",
-    "refresh": <%= @refresh %><%= ',' if @users.size > 0 or @auth.size == 2  or @ssl.size == 2%>
+    "refresh": <%= @refresh %><%= ',' if @users.size > 0 or @auth.size == 2  or @ssl.size == 2 or @usersoptions.size > 0 %>
     <%- if @users.size > 0 -%>
     "users": [
     <%- @users.each_with_index do |user, i| -%>
@@ -41,19 +41,30 @@
         }
       }<%= ',' if i < (@users.size - 1) %>
     <%- end -%>
-    ]<%= ',' if @users.size %>
+    ]<%= ',' if @auth.size == 2  or @ssl.size == 2 or @usersoptions.size > 0 %>
   <%- end -%>
   <%- if @auth.size == 2 -%>
     "auth": {
       "publickey": "<%= @auth['publickey']  %>",
       "privatekey": "<%= @auth['privatekey']  %>"
-    }<%= ',' if @ssl.size == 2 %>
+    }<%= ',' if @ssl.size == 2 || @usersoptions.size > 0 %>
   <%- end -%>
   <%- if @ssl.size == 2 -%>
     "ssl": {
       "certfile": "<%= @ssl['certfile']  %>",
       "keyfile": "<%= @ssl['keyfile']  %>"
-    }
+    }<%= ',' if @usersoptions.size > 0 %>
+  <%- end -%>
+  <%- if @usersoptions.size > 0 -%>
+    "usersOptions": {
+    <%- @usersoptions.each_with_index do |(k,v), idx| -%>
+      <%- if [true, false].include? v -%>
+      "<%= k %>": <%= v %><%= ',' if idx != (@usersoptions.size - 1) %>
+      <%- else -%>
+      "<%= k %>": "<%= v %>"<%= ',' if idx != (@usersoptions.size - 1) %>
+      <%- end -%>
+    <%- end -%>
+   }
   <%- end -%>
   }
 }

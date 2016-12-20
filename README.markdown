@@ -111,6 +111,17 @@ Litle more advanced:
 ```
 uchiwa::ssl: { 'certfile': '/opt/ssl/%{::hostname}.crt', 'keyfile': '/opt/ssl/%{::hostname}.key' }
 ```
+## Users Options
+
+Example of declaring the UsersOptions hash as defined in https://docs.uchiwa.io/getting-started/configuration/#users-options:
+
+Via hiera:
+```
+uchiwa::usersoptions:
+  disableNoExpiration: true
+  requireSilencingReason: true
+  defaultExpireOnResolve: true
+```
 
 ## License
 
