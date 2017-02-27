@@ -5,7 +5,7 @@ class uchiwa::install {
     'Debian': {
       class { 'uchiwa::repo::apt': }
       if ($uchiwa::install_repo) {
-        $repo_require = Apt::Source['sensu']
+        $repo_require = Apt::Source['uchiwa']
       } else {
         $repo_require = undef
       }
@@ -14,7 +14,7 @@ class uchiwa::install {
     'RedHat': {
       class { 'uchiwa::repo::yum': }
       if ($uchiwa::install_repo) {
-        $repo_require = Yumrepo['sensu']
+        $repo_require = Yumrepo['uchiwa']
       } else {
         $repo_require = undef
       }
