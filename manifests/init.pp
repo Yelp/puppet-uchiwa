@@ -92,7 +92,7 @@
 #    Default: [{
 #               name     => 'sensu',
 #               ssl      => false,
-#               hostname => '127.0.0.1',
+#               host     => '127.0.0.1',
 #               port     => 4567,
 #               user     => 'sensu',
 #               pass     => 'sensu',
