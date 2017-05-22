@@ -9,7 +9,7 @@ exclude_paths = [
   "spec/**/*",
 ]
 
-PuppetLint.configuration.log_format = "%{path}:%{linenumber}:%{check}:%{KIND}:%{message}"
+PuppetLint.configuration.log_format = "%{path}:%{line}:%{check}:%{KIND}:%{message}"
 PuppetLint.configuration.send("disable_80chars")
 PuppetLint.configuration.send("disable_autoloader_layout")
 PuppetLint.configuration.send("disable_quoted_booleans")
