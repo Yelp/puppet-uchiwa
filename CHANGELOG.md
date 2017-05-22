@@ -1,5 +1,31 @@
 # Change Log
 
+## [2.0.0](https://github.com/Yelp/puppet-uchiwa/tree/2.0.0) (2017-05-22)
+[Full Changelog](https://github.com/Yelp/puppet-uchiwa/compare/v1.0.1...2.0.0)
+
+**Closed issues:**
+
+- Support usersOptions [\#77](https://github.com/Yelp/puppet-uchiwa/issues/77)
+- Incorrect repository url [\#70](https://github.com/Yelp/puppet-uchiwa/issues/70)
+- Detail: undefined method `each\_with\_index' for nil:NilClass [\#53](https://github.com/Yelp/puppet-uchiwa/issues/53)
+
+**Merged pull requests:**
+
+- Correct default entry for sensu\_api\_endpoints [\#80](https://github.com/Yelp/puppet-uchiwa/pull/80) ([dalesit](https://github.com/dalesit))
+- Wrong resource name for repo resources [\#79](https://github.com/Yelp/puppet-uchiwa/pull/79) ([tobias-urdin](https://github.com/tobias-urdin))
+- Support the new UsersOptions hash [\#78](https://github.com/Yelp/puppet-uchiwa/pull/78) ([br0ch0n](https://github.com/br0ch0n))
+- Fix Gemfile to get the tests to pass again [\#75](https://github.com/Yelp/puppet-uchiwa/pull/75) ([solarkennedy](https://github.com/solarkennedy))
+- Remove empty lines [\#73](https://github.com/Yelp/puppet-uchiwa/pull/73) ([karolisc](https://github.com/karolisc))
+- users add - json missing  comma [\#72](https://github.com/Yelp/puppet-uchiwa/pull/72) ([karolisc](https://github.com/karolisc))
+- Renaming repo from sensu to uchiwa [\#71](https://github.com/Yelp/puppet-uchiwa/pull/71) ([vorlock](https://github.com/vorlock))
+- Issue \#68 - Added SSL Support [\#69](https://github.com/Yelp/puppet-uchiwa/pull/69) ([FireDrunk](https://github.com/FireDrunk))
+- Multiple backends [\#66](https://github.com/Yelp/puppet-uchiwa/pull/66) ([pauloconnor](https://github.com/pauloconnor))
+- Fix travis build [\#65](https://github.com/Yelp/puppet-uchiwa/pull/65) ([queeno](https://github.com/queeno))
+- Introduce auth parameter support in puppet-uchiwa [\#64](https://github.com/Yelp/puppet-uchiwa/pull/64) ([queeno](https://github.com/queeno))
+- Update the uchiwa rspec test with up-to-date APT repo key [\#63](https://github.com/Yelp/puppet-uchiwa/pull/63) ([queeno](https://github.com/queeno))
+- Adding option to not install the uchiwa package [\#58](https://github.com/Yelp/puppet-uchiwa/pull/58) ([jgnagy](https://github.com/jgnagy))
+- 4.2 testing + Failing Test [\#55](https://github.com/Yelp/puppet-uchiwa/pull/55) ([solarkennedy](https://github.com/solarkennedy))
+
 ## [v1.0.1](https://github.com/Yelp/puppet-uchiwa/tree/v1.0.1) (2015-12-07)
 [Full Changelog](https://github.com/Yelp/puppet-uchiwa/compare/v1.0.0...v1.0.1)
 
@@ -38,7 +64,7 @@
 - Notify uchiwa service when package changes [\#34](https://github.com/Yelp/puppet-uchiwa/pull/34) ([timmow](https://github.com/timmow))
 - Ensure uchiwa.json is not world-readable [\#32](https://github.com/Yelp/puppet-uchiwa/pull/32) ([nhinds](https://github.com/nhinds))
 - Fix some issues with 3.7.\* Puppet [\#31](https://github.com/Yelp/puppet-uchiwa/pull/31) ([tayzlor](https://github.com/tayzlor))
-- missing default host for sensu API [\#29](https://github.com/Yelp/puppet-uchiwa/pull/29) ([n1tr0g](https://github.com/n1tr0g))
+- missing default host for sensu API [\#29](https://github.com/Yelp/puppet-uchiwa/pull/29) ([dgolja](https://github.com/dgolja))
 
 ## [0.3.0](https://github.com/Yelp/puppet-uchiwa/tree/0.3.0) (2014-12-11)
 [Full Changelog](https://github.com/Yelp/puppet-uchiwa/compare/0.2.7...0.3.0)
