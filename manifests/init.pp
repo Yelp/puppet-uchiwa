@@ -180,9 +180,9 @@ class uchiwa (
   validate_hash($ssl)
   validate_hash($usersoptions)
 
-  anchor { 'uchiwa::begin': } ->
-  class { 'uchiwa::install': } ->
-  class { 'uchiwa::config': } ~>
-  class { 'uchiwa::service': } ->
-  anchor { 'uchiwa::end': }
+  anchor { 'uchiwa::begin': }
+  -> class { 'uchiwa::install': }
+  -> class { 'uchiwa::config': }
+  ~> class { 'uchiwa::service': }
+  -> anchor { 'uchiwa::end': }
 }
