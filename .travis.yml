@@ -14,9 +14,6 @@ script:
   - "rake syntax"
   - "rake spec SPEC_OPTS='--format documentation'"
 env:
-  - PUPPET_VERSION="~> 3.2.0"
-  - PUPPET_VERSION="~> 3.3.0"
-  - PUPPET_VERSION="~> 3.4.0"
   - PUPPET_VERSION="~> 3.5.0"
   - PUPPET_VERSION="~> 3.5.0" STRICT_VARIABLES=yes
   - PUPPET_VERSION="~> 3.6.0"
@@ -35,5 +32,3 @@ matrix:
       env: PUPPET_VERSION="~> 3.2.0"
     - rvm: 2.1.0
       env: PUPPET_VERSION="~> 3.3.0"
-    - rvm: 2.1.0
-      env: PUPPET_VERSION="~> 3.4.0"
