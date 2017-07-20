@@ -113,7 +113,7 @@ describe 'uchiwa' do
         context 'default' do
           it { should contain_yumrepo('uchiwa').with(
             :enabled   => 1,
-            :baseurl   => 'http://repos.sensuapp.org/yum/el/6/$basearch/',
+            :baseurl   => 'https://repositories.sensuapp.org/yum/6/$basearch/',
             :gpgcheck  => 0,
             :before    => 'Package[uchiwa]'
           ) }
@@ -121,7 +121,7 @@ describe 'uchiwa' do
 
         context 'unstable repo' do
           let(:params) { { :repo => 'unstable' } }
-          it { should contain_yumrepo('uchiwa').with(:baseurl => 'http://repos.sensuapp.org/yum-unstable/el/6/$basearch/' )}
+          it { should contain_yumrepo('uchiwa').with(:baseurl => 'https://repositories.sensuapp.org/yum-unstable/6/$basearch/' )}
         end
 
         context 'override repo url' do
