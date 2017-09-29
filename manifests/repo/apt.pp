@@ -19,7 +19,15 @@ class uchiwa::repo::apt {
       if $uchiwa::repo_source {
         $url = $uchiwa::repo_source
       } else {
-        $url = 'http://repositories.sensuapp.org/apt'
+        $url = 'https://repositories.sensuapp.org/apt'
+      }
+
+      # ignoring the puppet-lint plugin because of a bug that warns on the next
+      # line.
+      if $::uchiwa::repo_release == undef { #lint:ignore:undef_in_function
+        $release = $::lsbdistcodename
+      } else {
+        $release = $::uchiwa::repo_release
       }
 
       apt::source { 'uchiwa':
@@ -34,7 +42,7 @@ class uchiwa::repo::apt {
           'source' => $uchiwa::repo_key_source,
         },
         location => $url,
-        release  => 'sensu',
+        release  => $release,
         repos    => $uchiwa::repo,
       }
 

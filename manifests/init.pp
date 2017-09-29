@@ -44,7 +44,7 @@
 #
 #  [*repo_key_source*]
 #    String
-#    Default: http://repositories.sensuapp.org/apt/pubkey.gpg
+#    Default: https://repositories.sensuapp.org/apt/pubkey.gpg
 #    GPG key for the repo we're installing
 #
 #  [*manage_package*]
@@ -139,6 +139,7 @@ class uchiwa (
   $version              = $uchiwa::params::version,
   $install_repo         = $uchiwa::params::install_repo,
   $repo                 = $uchiwa::params::repo,
+  $repo_release         = $uchiwa::params::repo_release,
   $repo_source          = $uchiwa::params::repo_source,
   $repo_key_id          = $uchiwa::params::repo_key_id,
   $repo_key_source      = $uchiwa::params::repo_key_source,

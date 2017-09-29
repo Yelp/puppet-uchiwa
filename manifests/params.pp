@@ -21,9 +21,10 @@ class uchiwa::params {
   $version         = 'latest'
   $install_repo    = true
   $repo            = 'main'
+  $repo_release    = undef
   $repo_source     = undef
   $repo_key_id     = 'EE15CFF6AB6E4E290FDAB681A20F259AEB9C94BB'
-  $repo_key_source = 'http://repositories.sensuapp.org/apt/pubkey.gpg'
+  $repo_key_source = 'https://repositories.sensuapp.org/apt/pubkey.gpg'
   $manage_services = true
   $manage_package  = true
   $manage_user     = true
