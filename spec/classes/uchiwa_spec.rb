@@ -42,6 +42,7 @@ describe 'uchiwa' do
         let(:facts) {
           {
             :osfamily => 'Debian',
+            :lsbdistcodename => 'jessie',
             :fqdn => 'testhost.domain.com',
             :concat_basedir => '/dne'
           }
@@ -53,18 +54,26 @@ describe 'uchiwa' do
           context 'default' do
             it { should contain_apt__source('uchiwa').with(
               :ensure   => 'present',
-              :location => 'http://repositories.sensuapp.org/apt',
-              :release  => 'sensu',
+              :location => 'https://repositories.sensuapp.org/apt',
+              :release  => 'jessie',
               :repos    => 'main',
               :include  => { 'src' => false, 'deb' => true },
-              :key      => { 'id' => 'EE15CFF6AB6E4E290FDAB681A20F259AEB9C94BB', 'source' => 'http://repositories.sensuapp.org/apt/pubkey.gpg' },
+              :key      => { 'id' => 'EE15CFF6AB6E4E290FDAB681A20F259AEB9C94BB', 'source' => 'https://repositories.sensuapp.org/apt/pubkey.gpg' },
               :before   => 'Package[uchiwa]'
             ) }
           end
 
           context 'unstable repo' do
-            let(:params) { { :repo => 'unstable' } }
-            it { should contain_apt__source('uchiwa').with_repos('unstable') }
+            let(:params) {
+              {
+                :repo => 'unstable',
+                :repo_release => 'stretch',
+              }
+            }
+            it { should contain_apt__source('uchiwa').with(
+              :repos => 'unstable',
+              :release  => 'stretch'
+            )}
           end
 
           context 'override repo url' do
@@ -93,7 +102,7 @@ describe 'uchiwa' do
 
             it { should_not contain_apt__key('uchiwa').with(
               :key         => '7580C77F',
-              :key_source  => 'http://repositories.sensuapp.org/apt/pubkey.gpg'
+              :key_source  => 'https://repositories.sensuapp.org/apt/pubkey.gpg'
             ) }
 
             it { should contain_package('uchiwa').with(
