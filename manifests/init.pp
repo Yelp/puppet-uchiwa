@@ -156,6 +156,7 @@ class uchiwa (
   $auth                 = $uchiwa::params::auth,
   $ssl                  = $uchiwa::params::ssl,
   $usersoptions         = $uchiwa::params::usersoptions,
+  $log_level            = $uchiwa::params::log_level
 ) inherits uchiwa::params {
 
   # validate parameters here
@@ -180,6 +181,7 @@ class uchiwa (
   validate_hash($auth)
   validate_hash($ssl)
   validate_hash($usersoptions)
+  validate_re($log_level, 'trace|debug|info|warn|fatal')
 
   anchor { 'uchiwa::begin': }
   -> class { 'uchiwa::install': }

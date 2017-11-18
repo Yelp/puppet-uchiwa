@@ -28,6 +28,7 @@ class uchiwa::params {
   $manage_services = true
   $manage_package  = true
   $manage_user     = true
+  $log_level       = 'info'
 
   $sensu_api_endpoints  = [
     {
