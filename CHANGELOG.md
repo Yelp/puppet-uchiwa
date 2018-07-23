@@ -1,10 +1,27 @@
 # Change Log
 
-## [2.0.0](https://github.com/Yelp/puppet-uchiwa/tree/2.0.0) (2017-05-22)
-[Full Changelog](https://github.com/Yelp/puppet-uchiwa/compare/v1.0.1...2.0.0)
+## [v2.1.0](https://github.com/Yelp/puppet-uchiwa/tree/v2.1.0) (2017-11-18)
+[Full Changelog](https://github.com/Yelp/puppet-uchiwa/compare/v2.0.0...v2.1.0)
 
 **Closed issues:**
 
+- Service enable loop [\#76](https://github.com/Yelp/puppet-uchiwa/issues/76)
+- Commit caused regression [\#74](https://github.com/Yelp/puppet-uchiwa/issues/74)
+- SSL Support [\#68](https://github.com/Yelp/puppet-uchiwa/issues/68)
+
+**Merged pull requests:**
+
+- loglevel introduced in 0.14.1 - rebased [\#87](https://github.com/Yelp/puppet-uchiwa/pull/87) ([bsmaldon](https://github.com/bsmaldon))
+- Switch packages mirror protocol to https [\#86](https://github.com/Yelp/puppet-uchiwa/pull/86) ([SergK](https://github.com/SergK))
+- Update the gemfile in an attempt to fix the tests [\#83](https://github.com/Yelp/puppet-uchiwa/pull/83) ([solarkennedy](https://github.com/solarkennedy))
+- Update repo URI for YUM [\#82](https://github.com/Yelp/puppet-uchiwa/pull/82) ([hypnotortoise](https://github.com/hypnotortoise))
+
+## [v2.0.0](https://github.com/Yelp/puppet-uchiwa/tree/v2.0.0) (2017-05-22)
+[Full Changelog](https://github.com/Yelp/puppet-uchiwa/compare/v1.0.1...v2.0.0)
+
+**Closed issues:**
+
+- New Release [\#81](https://github.com/Yelp/puppet-uchiwa/issues/81)
 - Support usersOptions [\#77](https://github.com/Yelp/puppet-uchiwa/issues/77)
 - Incorrect repository url [\#70](https://github.com/Yelp/puppet-uchiwa/issues/70)
 - Detail: undefined method `each\_with\_index' for nil:NilClass [\#53](https://github.com/Yelp/puppet-uchiwa/issues/53)
