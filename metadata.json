@@ -45,7 +45,9 @@
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
         "10.04",
-        "12.04"
+        "12.04",
+        "14.04.5",
+        "16.04.4"
       ]
     }
   ],
@@ -67,7 +69,7 @@
   "dependencies": [
     {
       "name": "puppetlabs/apt",
-      "version_requirement": ">=2.0.0 <3.0.0"
+      "version_requirement": ">=2.0.0 <5.0.1"
     },
     {
       "name": "puppetlabs/stdlib"

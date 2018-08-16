@@ -5,11 +5,7 @@
 #
 class uchiwa::params {
   case $::osfamily {
-    'Debian': {
-      $package_name = 'uchiwa'
-      $service_name = 'uchiwa'
-    }
-    'RedHat', 'Amazon': {
+    'Debian', 'RedHat', 'Amazon': {
       $package_name = 'uchiwa'
       $service_name = 'uchiwa'
     }
